@@ -1,0 +1,35 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="loginViewHelper"
+            type="com.test.mvvm.LoginViewHelper"></variable>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+        
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{loginViewHelper.name}"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{loginViewHelper.pwd}"
+            android:layout_marginTop="10dp"/>
+
+        <!-- data必须为databing的语法,且对应的方法必须是静态方法-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{loginViewHelper.pwd}"
+            android:onClick="onClickView"
+            app:data = "@{loginViewHelper.pwd}"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+</layout>
